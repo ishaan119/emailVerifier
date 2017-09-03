@@ -1,0 +1,11 @@
+package: .
+import:
+- package: github.com/ishaan119/emailVerifier
+  subpackages:
+  - handlers
+- package: github.com/DeanThompson/ginpprof
+- package: github.com/brandfolder/gin-gorelic
+- package: github.com/gin-gonic/gin
+  version: v1.2
+- package: github.com/newrelic/go-agent
+  version: v1.9.0

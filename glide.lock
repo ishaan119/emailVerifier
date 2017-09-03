@@ -1,0 +1,53 @@
+hash: 160e21c147f7245f2ec253b19de89e803ee34fa2af2ee6331833eb1f1d73ed6f
+updated: 2017-09-02T17:45:19.222356575+05:30
+imports:
+- name: github.com/brandfolder/gin-gorelic
+  version: 11571ae2d6a2bd91863a1798bf30be68248e61d3
+- name: github.com/caarlos0/env
+  version: 0cf029d5748c52beb2c9d20c81880cb4bdf8f788
+- name: github.com/DeanThompson/ginpprof
+  version: 8c0e31bfeaa87bd40412ee8a8ba383f5f700ff72
+- name: github.com/gin-contrib/sse
+  version: 22d885f9ecc78bf4ee5d72b937e4bbcdc58e8cae
+- name: github.com/gin-gonic/gin
+  version: d459835d2b077e44f7c9b453505ee29881d5d12d
+  subpackages:
+  - binding
+  - render
+- name: github.com/golang/protobuf
+  version: 17ce1425424ab154092bbb43af630bd647f3bb0d
+  subpackages:
+  - proto
+- name: github.com/ishaan119/emailVerifier
+  version: 4f7ecd4d8dc1274b85556cd32c0ce674c2653b0b
+  subpackages:
+  - handlers
+- name: github.com/mattn/go-isatty
+  version: fc9e8d8ef48496124e79ae0df75490096eccf6fe
+- name: github.com/newrelic/go-agent
+  version: 29ec3cd1bb2f21d21d36da37dae52695cb2c3a17
+  subpackages:
+  - internal
+  - internal/jsonx
+  - internal/logger
+  - internal/sysinfo
+  - internal/utilization
+- name: github.com/ugorji/go
+  version: 8c0409fcbb70099c748d71f714529204975f6c3f
+  subpackages:
+  - codec
+- name: github.com/yvasiyarov/go-metrics
+  version: c25f46c4b94079672242ec48a545e7ca9ebe3aec
+- name: github.com/yvasiyarov/gorelic
+  version: ae09aa139a2b7f638e2412baceaceebd41eff115
+- name: github.com/yvasiyarov/newrelic_platform_go
+  version: 9c099fbc30e90de5bb5c5f94aa5fd08f2daeaacd
+- name: golang.org/x/sys
+  version: 7ddbeae9ae08c6a06a59597f0c9edbc5ff2444ce
+  subpackages:
+  - unix
+- name: gopkg.in/go-playground/validator.v8
+  version: 5f1438d3fca68893a817e4a66806cea46a9e4ebf
+- name: gopkg.in/yaml.v2
+  version: eb3733d160e74a9c7e442f435eb3bea458e1d19f
+testImports: []
