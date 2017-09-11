@@ -42,7 +42,9 @@ func main() {
 	emailVerifierClient := router.Group(apiBaseURL + "/emails")
 	{
 		emailVerifierClient.POST("/verify", handlers.VerifyEmails)
+		emailVerifierClient.GET( "/index.html", handlers.GetIndexPage)
 	}
+
 
 	// Wrapping with pprof if running in debug mode
 	if gin.Mode() == gin.DebugMode {

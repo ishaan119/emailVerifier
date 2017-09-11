@@ -5,20 +5,30 @@ import (
 	"github.com/Verifier/emailVerifier/utils"
 	"github.com/Verifier/emailVerifier/verifier"
 	"github.com/gin-gonic/gin"
+	"net/http"
+	"github.com/Verifier/emailVerifier/templates"
 )
 
 //VerifyEmails takes a list of emails and returns in email is verified
 func VerifyEmails(c *gin.Context) {
+
+	emailToVerify := c.PostForm("email")
+
+	emailList := make([]string, 0)
+	emailList = append(emailList, emailToVerify)
 	var emailListObj entity.EmailList
-	bindErr := c.Bind(&emailListObj)
-
-	if bindErr != nil {
-		utils.LogErr("Error while binding email lists", bindErr)
-	}
-
+	emailListObj.Emails = emailList
 	err := verifier.VerifyEmailLists(emailListObj)
 	if err != nil {
 		utils.LogErr("Error verifying list", err)
 	}
+	
+}
 
+//GetIndexPage returns the index page for the website
+func GetIndexPage(c *gin.Context)  {
+
+	htmlOutput := templates.IndexTemplateName
+	c.Writer.WriteHeader(http.StatusOK)
+	c.Writer.Write([]byte(htmlOutput))
 }
