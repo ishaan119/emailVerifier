@@ -34,6 +34,13 @@ func main() {
 		router.Use(gin.Logger())
 	}
 
+	//Loading html files
+	router.LoadHTMLGlob("static/*.html")
+	router.Static("/css", "static/css")
+	router.Static("/images", "static/images")
+	router.Static("/js", "static/js")
+	router.Static("/fonts", "static/fonts")
+
 	router.GET("/ping", func(c *gin.Context) {
 		c.String(http.StatusOK, "pong")
 	})

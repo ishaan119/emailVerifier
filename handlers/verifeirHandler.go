@@ -6,7 +6,6 @@ import (
 	"github.com/Verifier/emailVerifier/verifier"
 	"github.com/gin-gonic/gin"
 	"net/http"
-	"github.com/Verifier/emailVerifier/templates"
 )
 
 //VerifyEmails takes a list of emails and returns in email is verified
@@ -22,13 +21,11 @@ func VerifyEmails(c *gin.Context) {
 	if err != nil {
 		utils.LogErr("Error verifying list", err)
 	}
-	
+
 }
 
 //GetIndexPage returns the index page for the website
 func GetIndexPage(c *gin.Context)  {
 
-	htmlOutput := templates.IndexTemplateName
-	c.Writer.WriteHeader(http.StatusOK)
-	c.Writer.Write([]byte(htmlOutput))
+	c.HTML(http.StatusOK, "index.html", nil)
 }

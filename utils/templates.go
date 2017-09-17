@@ -1,4 +1,4 @@
-package templates
+package utils
 
 const (
 	IndexTemplateName  = `<html>
@@ -8,7 +8,7 @@ const (
 	<body>
 	<form action="/email-verifier/api/1.0/emails/verify" method="post">
 	Email:<input type="email" name="email">
-	<input type="submit" value="Login">
+	<input type="submit" value="Submit">
 	</form>
 	</body>
 	</html>`
