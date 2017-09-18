@@ -9,6 +9,9 @@ import (
 	"github.com/brandfolder/gin-gorelic"
 	"github.com/gin-gonic/gin"
 	newrelic "github.com/newrelic/go-agent"
+	"path/filepath"
+	"os"
+	"fmt"
 )
 
 const (
@@ -35,11 +38,14 @@ func main() {
 	}
 
 	//Loading html files
-	router.LoadHTMLGlob("static/*.html")
-	router.Static("/css", "static/css")
-	router.Static("/images", "static/images")
-	router.Static("/js", "static/js")
-	router.Static("/fonts", "static/fonts")
+	//router.LoadHTMLGlob(filepath.Join(os.Getenv("TMPL_DIR"), "*"))
+	staticFilePath := "~/gospace/src/github.com/Verifier/emailVerifier/static/"
+	fmt.Println(os.Getenv("TEMPL_DIR"))
+	router.LoadHTMLGlob(filepath.Join(os.Getenv("TEMPL_DIR"), "*.html"))
+	router.Static("/css", filepath.Join(staticFilePath, "css"))
+	router.Static("/images", filepath.Join(staticFilePath, "images"))
+	router.Static("/js", filepath.Join(staticFilePath, "js"))
+	router.Static("/fonts", filepath.Join(staticFilePath, "fonts"))
 
 	router.GET("/ping", func(c *gin.Context) {
 		c.String(http.StatusOK, "pong")
