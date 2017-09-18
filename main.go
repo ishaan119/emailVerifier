@@ -39,13 +39,12 @@ func main() {
 
 	//Loading html files
 	//router.LoadHTMLGlob(filepath.Join(os.Getenv("TMPL_DIR"), "*"))
-	staticFilePath := "~/gospace/src/github.com/Verifier/emailVerifier/static/"
-	fmt.Println(os.Getenv("TEMPL_DIR"))
+	fmt.Println(filepath.Join(filepath.Join(os.Getenv("TEMPL_DIR"), "css")))
 	router.LoadHTMLGlob(filepath.Join(os.Getenv("TEMPL_DIR"), "*.html"))
-	router.Static("/css", filepath.Join(staticFilePath, "css"))
-	router.Static("/images", filepath.Join(staticFilePath, "images"))
-	router.Static("/js", filepath.Join(staticFilePath, "js"))
-	router.Static("/fonts", filepath.Join(staticFilePath, "fonts"))
+	router.Static("/css", filepath.Join(filepath.Join(os.Getenv("TEMPL_DIR"), "css")))
+	router.Static("/images", filepath.Join(filepath.Join(os.Getenv("TEMPL_DIR"), "images")))
+	router.Static("/js", filepath.Join(filepath.Join(os.Getenv("TEMPL_DIR"), "js")))
+	router.Static("/fonts", filepath.Join(filepath.Join(os.Getenv("TEMPL_DIR"), "fonts")))
 
 	router.GET("/ping", func(c *gin.Context) {
 		c.String(http.StatusOK, "pong")
