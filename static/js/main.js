@@ -64,6 +64,9 @@ $(document).ready(function() {
             data: formData,
             success: function(results) {
                 alert("Valid Email");
+            },
+            error: function(){
+                alert("Invalid Email");
             }
         });
 

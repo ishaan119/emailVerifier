@@ -1,7 +1,7 @@
 package utils
 
 const (
-	IndexTemplateName  = `<html>
+	IndexTemplateName = `<html>
 	<head>
 	<title></title>
 	</head>

@@ -5,12 +5,10 @@ import (
 	"github.com/Verifier/emailVerifier/verifier"
 	"github.com/gin-gonic/gin"
 	"net/http"
-	"fmt"
 )
 
 //VerifyEmails takes a list of emails and returns in email is verified
 func VerifyEmails(c *gin.Context) {
-	fmt.Println("IShaan")
 	emailToVerify := c.Query("email")
 	if emailToVerify == ""{
 		utils.LogInfo("No email found in params")
@@ -36,6 +34,5 @@ func VerifyEmails(c *gin.Context) {
 
 //GetIndexPage returns the index page for the website
 func GetIndexPage(c *gin.Context) {
-	fmt.Println("Loading index")
 	c.HTML(http.StatusOK, "index.html", nil)
 }
