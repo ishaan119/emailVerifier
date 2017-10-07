@@ -3,15 +3,15 @@ package main
 import (
 	"net/http"
 
+	"fmt"
 	"github.com/DeanThompson/ginpprof"
 	"github.com/Verifier/emailVerifier/constants"
 	"github.com/Verifier/emailVerifier/handlers"
 	"github.com/brandfolder/gin-gorelic"
 	"github.com/gin-gonic/gin"
 	newrelic "github.com/newrelic/go-agent"
-	"path/filepath"
 	"os"
-	"fmt"
+	"path/filepath"
 )
 
 const (
@@ -54,9 +54,8 @@ func main() {
 	emailVerifierClient := router.Group(apiBaseURL + "/emails")
 	{
 		emailVerifierClient.POST("/verify", handlers.VerifyEmails)
-		emailVerifierClient.GET( "/index.html", handlers.GetIndexPage)
+		emailVerifierClient.GET("/index.html", handlers.GetIndexPage)
 	}
-
 
 	// Wrapping with pprof if running in debug mode
 	if gin.Mode() == gin.DebugMode {

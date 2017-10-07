@@ -53,4 +53,19 @@ $(document).ready(function() {
 		$('.nav-toggle').toggleClass('close-nav');
 		nav.toggleClass('open');
 	});
+
+    $('#vform').submit(function(e){
+        e.preventDefault();
+        var email = $('#email_v').val(),
+            formData = 'email=' + email
+        $.ajax({
+            type: 'post',
+            url: '/email-verifier/api/1.0/emails/verify?' + $.param({ email:email}),
+            data: formData,
+            success: function(results) {
+                alert("Valid Email");
+            }
+        });
+
+    });
 });

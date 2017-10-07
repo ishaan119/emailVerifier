@@ -15,8 +15,6 @@ func VerifyEmailLists(emailListObj entity.EmailList) (err error) {
 			utils.LogErr("Error validating email", err)
 			fmt.Println("InValid" + email)
 		}
-
-		fmt.Println("Valid" + email)
 	}
 
 	return err

@@ -48,24 +48,27 @@ func ValidateHost(email string) error {
 		return ErrUnresolvableHost
 	}
 
-	fmt.Printf("%s", mx)
+	fmt.Println("Valid Domain")
 
-	client, err := smtp.Dial(fmt.Sprintf("%s:%d", mx[0].Host, 25))
+	client, err := smtp.Dial(fmt.Sprintf("%s:%d", mx[1].Host, 25))
 	if err != nil {
 		fmt.Println(err)
 		return NewSmtpError(err)
 	}
+	fmt.Println("Dial done")
 	defer client.Close()
 	err = client.Hello("checkmail.me")
 	if err != nil {
 		fmt.Println(err)
 		return NewSmtpError(err)
 	}
-	err = client.Mail("lansome-cowboy@gmail.com")
+	fmt.Println("Hello DOne")
+	err = client.Mail("test@gmail.com")
 	if err != nil {
 		fmt.Println(err)
 		return NewSmtpError(err)
 	}
+
 	err = client.Rcpt(email)
 	if err != nil {
 		fmt.Println(err)

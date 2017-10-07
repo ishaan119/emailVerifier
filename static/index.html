@@ -44,7 +44,11 @@
       <div class="banner-text text-center">
         <h1>Filter Mails</h1>
         <p>Never let your emails bounce. Have everything verified before sending bulk mails</p>
-        <a href="#" class="btn btn-large">Find out more</a> </div>
+        <form method="post" name="vform" id="vform">
+          <input name="email_v" id="email_v" type="email" class=" col-xs-12 col-sm-12 col-md-12 col-lg-12 noMarr" placeholder="Email Address..." >
+          <input type="submit" id="vsubmit" name="verify" class="vsubmitBnt" value="Verify your email">
+          <div id="vemail"></div>
+        </form>
       <!-- banner text --> 
     </div>
   </div>
@@ -58,11 +62,6 @@
       <p>We provide what you need and in the fastest way possible. Try us out and only pay us if you like it. No strings attached!</p>
     </div>
   </div>
-  <form action="/email-verifier/api/1.0/emails/verify" method="post">
-    Email:<input type="email" name="email">
-    <input type="submit" value="Submit">
-  </form>
-</section>
 <!-- intro section -->
 
 <!--
@@ -370,6 +369,6 @@ work section -->
 <script src="/js/retina.min.js"></script>
 <script src="/js/modernizr.js"></script>
 <script src="/js/main.js"></script>
-<script type="text/javascript" src="js/jquery.contact.js"></script>
+<script src="js/jquery.verifyEmail.js"></script>
 </body>
 </html>
